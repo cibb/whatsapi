@@ -51,7 +51,7 @@ Finally, Into the `config/app.php` file, add to aliases array each of these line
 
 ```
     'Whatsapi' => 'Xaamin\Whatsapi\Facades\Laravel\Whatsapi',
-    'Registration' => 'Xaamin\Whatsapi\Facades\Laravel\Registration',
+    'WhatsapiTool' => 'Xaamin\Whatsapi\Facades\Laravel\Registration',
 ```
 
 ### Configuration
@@ -153,7 +153,7 @@ When requesting the code, you can do it via SMS or voice call, in both cases you
     $number = '5219511552222'; # Number with country code
     $type = 'sms'; # This can be either sms or voice
 
-    $response = Registration::requestCode($number, $type);
+    $response = WhatsapiTool::requestCode($number, $type);
 
 ```
 
@@ -178,7 +178,7 @@ If you received the code like this 123-456 you should register like this '123456
     $number = '5219511552222'; # Number with country code
     $code = '132456'; # Replace with received code  
 
-    $response = Registration::registerCode($number, $code);
+    $response = WhatsapiTool::registerCode($number, $code);
 
 ```
 
@@ -267,7 +267,7 @@ See the entire registration process on [https://github.com/WHAnonymous/Chat-API/
 **Sync contacts**
 
 ```
-    $messages = $result = Whatsapi::syncContacts(['5219512222222', '5219512222223']);
+    $result = Whatsapi::syncContacts(['5219512222222', '5219512222223']);
     
     foreach ($result->existing as $number => $account)
     {
