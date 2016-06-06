@@ -1,20 +1,7 @@
 {
-    "name": "xaamin/whatsapi",
-    "description": "Wrapper for Whatsapp messenger",
+    "name": "cibb/whatsapi",
+    "description": "Fork of Xaamin package using API-DEV branch.",
     "license": "MIT",
-    "keywords": [
-        "whatsapp",
-        "whatsapi",
-        "laravel",
-        "chat",
-        "messenger"
-    ],
-    "authors": [
-        {
-            "name": "Benjamín Martínez Mateos",
-            "email": "bmxamin@gmail.com"
-        }
-    ],
     "require": {
         "php": ">=5.6",        
         "whatsapp/chat-api": "dev-master"
@@ -24,7 +11,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Xaamin\\Whatsapi\\": "src/"
+            "cibb\\Whatsapi\\": "src/"
         }
     }
 }
