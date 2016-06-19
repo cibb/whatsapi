@@ -399,6 +399,7 @@ class MGP25 implements WhatsapiInterface
     {
         if($this->connected)
         {
+            sleep(1);
             $this->offline();
             $this->whatsProt->disconnect();
 
