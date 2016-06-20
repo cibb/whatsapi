@@ -329,8 +329,8 @@ class MessageManager
                 $attributes->timestamp = $attributes->t;
 
                 unset($attributes->t);
-                
-                $child = $message->getChild(0);
+
+                $child = is_null($message->getChild(1)) ? $message->getChild(0) : $message->getChild(1);
 
                 $node = new stdClass();
                 $node->tag = $child->getTag();
@@ -343,7 +343,7 @@ class MessageManager
                 {
                     if($attributes->body->attributes->type == 'vcard')
                     {
-                        $vcard = new VCardReader(null, $child->getChild(0)->getData());
+                        $vcard = new VCardReader(null, is_null($message->getChild(1)) ? $message->getChild(0)->getData() : $message->getChild(1)->getData());
 
                         if(count($vcard) == 1)
                         {
